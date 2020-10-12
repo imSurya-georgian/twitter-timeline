@@ -11,14 +11,8 @@ body{
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 576px) {
     .logo{
-        width: 60%;
-        margin-left: 20%;
-    }
-    h2{
-        text-align:center;
-    }
-    .follow-btn{
-        text-align: center;
+        width: 50%;
+        /* margin-left: 20%; */
     }
     .main-block{
         margin-top: 20px;

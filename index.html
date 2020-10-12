@@ -21,11 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-2">
-          <img
-            class="img-thumbnail logo"
-            src="assets/images/logo.jpg"
-            alt=""
-          />
+          <img class="img-thumbnail logo" src="assets/images/logo.jpg" alt="" />
         </div>
         <div class="col-sm-10 main-block">
           <div class="row">
@@ -62,85 +58,12 @@
       <table class="table mt-sm-5 tweets">
         <thead>
           <tr>
-            <th scope="col">No.</th>
             <th scope="col">Date Posted</th>
             <th scope="col">Name</th>
-            <th>Share</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Sep 19, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1307196743218376707?s=19"
-                >Operating leverage</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Sep 15, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1305822963837542404?s=19"
-                >Gross Domestic Product</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Sep 13, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1305096721853104128?s=19"
-                >Four Dividend metrics</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Sep 12, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1304766169124012033?s=19"
-                >Cash flows from Operations</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Aug 10, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1292729926131490816?s=19"
-                >Independent Auditors' Report</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">6</th>
-            <td>Sep 24, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1309097930415054850?s=19"
-                >Return on capital employed</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">7</th>
-            <td>Oct 1st, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1311541237309038592?s=19"
-                >Price to earnings ratio</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">8</th>
             <td>Oct 7th, 2020</td>
             <td>
               <a
@@ -150,7 +73,60 @@
             </td>
           </tr>
           <tr>
-            <th scope="row">9</th>
+            <td>Oct 1st, 2020</td>
+            <td>
+              <a
+                href="https://twitter.com/money_theory/status/1311541237309038592?s=19"
+                >Price to earnings ratio</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Sep 24, 2020</td>
+            <td>
+              <a
+                href="https://twitter.com/money_theory/status/1309097930415054850?s=19"
+                >Return on capital employed</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Sep 19, 2020</td>
+            <td>
+              <a
+                href="https://twitter.com/money_theory/status/1307196743218376707?s=19"
+                >Operating leverage</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Sep 15, 2020</td>
+            <td>
+              <a
+                href="https://twitter.com/money_theory/status/1305822963837542404?s=19"
+                >Gross Domestic Product</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Sep 13, 2020</td>
+            <td>
+              <a
+                href="https://twitter.com/money_theory/status/1305096721853104128?s=19"
+                >Four Dividend metrics</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Sep 12, 2020</td>
+            <td>
+              <a
+                href="https://twitter.com/money_theory/status/1304766169124012033?s=19"
+                >Cash flows from Operations</a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Aug 11, 2020</td>
             <td>
               <a
@@ -160,7 +136,15 @@
             </td>
           </tr>
           <tr>
-            <th scope="row">10</th>
+            <td>Aug 10, 2020</td>
+            <td>
+              <a
+                href="https://twitter.com/money_theory/status/1292729926131490816?s=19"
+                >Independent Auditors' Report</a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Aug 7th, 2020</td>
             <td>
               <a
@@ -173,4 +157,21 @@
       </table>
     </div>
   </body>
+  <!-- <script>
+    $(document).ready(function () {
+      alert("Loaded");
+      $.ajax({
+        url:
+          "https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=money_theory",
+        beforeSend: function(xhr){
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('Access-Control-Allow-Origin','*');
+            },
+        crossDomain: true,
+      }).done(function (data) {
+        console.log(data[0]["followers_count"]);
+        $("#count").text(data[0]["followers_count"]);
+      });
+    });
+  </script> -->
 </html>
