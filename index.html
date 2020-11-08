@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money Theory</title>
-    <link rel="icon" href="assets/images/logo.jpg">
+    <link rel="icon" href="assets/images/logo.jpg" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -63,8 +63,8 @@
             <th scope="col">Name</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="tBody">
+          <!-- <tr>
             <td>Oct 23rd, 2020</td>
             <td>
               <a
@@ -127,15 +127,6 @@
               >
             </td>
           </tr>
-          <!-- <tr>
-            <td>Sep 13, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1305096721853104128?s=19"
-                >Four Dividend metrics</a
-              >
-            </td>
-          </tr> -->
           <tr>
             <td>Sep 12, 2020</td>
             <td>
@@ -145,15 +136,6 @@
               >
             </td>
           </tr>
-          <!-- <tr>
-            <td>Aug 11, 2020</td>
-            <td>
-              <a
-                href="https://twitter.com/money_theory/status/1293063953157742592?s=19"
-                >Enterprise value</a
-              >
-            </td>
-          </tr> -->
           <tr>
             <td>Aug 10, 2020</td>
             <td>
@@ -171,26 +153,62 @@
                 >Dividends taxability</a
               >
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
   </body>
-  <!-- <script>
-    $(document).ready(function () {
-      alert("Loaded");
-      $.ajax({
-        url:
-          "https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=money_theory",
-        beforeSend: function(xhr){
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.setRequestHeader('Access-Control-Allow-Origin','*');
-            },
-        crossDomain: true,
-      }).done(function (data) {
-        console.log(data[0]["followers_count"]);
-        $("#count").text(data[0]["followers_count"]);
+
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyD0m8GuVn15AO1FMMdavIBf3XmkSD8ipYE",
+      authDomain: "twitter-timeline-7061d.firebaseapp.com",
+      databaseURL: "https://twitter-timeline-7061d.firebaseio.com",
+      projectId: "twitter-timeline-7061d",
+      storageBucket: "twitter-timeline-7061d.appspot.com",
+      messagingSenderId: "325130161653",
+      appId: "1:325130161653:web:08c6b1a8bcc3ec268524bc",
+    };
+    // Initialize Firebase
+    var app = firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore(app);
+    db.collection("tweets").onSnapshot(function (querySnapshot) {
+      var tweets = [];
+      querySnapshot.forEach(function (tweet) {
+        tweets.push(tweet.data());
+      });
+      tweets.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      });
+      var tBody = document.getElementById("tBody");
+      tBody.innerHTML = "";
+      tweets.forEach((tweet) => {
+        var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var date = document.createTextNode(
+          moment(tweet.date).format("MMM Do, YYYY")
+        );
+        td1.append(date);
+        var td2 = document.createElement("td");
+        var anchor = document.createElement("a");
+        anchor.setAttribute("href", tweet.link);
+        anchor.innerText = tweet.name;
+        td2.append(anchor);
+        tr.append(td1);
+        tr.append(td2);
+        tBody.append(tr);
       });
     });
-  </script> -->
+  </script>
 </html>
